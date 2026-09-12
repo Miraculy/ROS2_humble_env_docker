@@ -1,0 +1,39 @@
+services:
+  ros2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: ros2-humble-gazebo-nvidia
+
+    container_name: ros2_humble_gazebo
+
+
+    # Docker Desktop GPU (CDI)
+    devices:
+      - "nvidia.com/gpu=all"
+
+
+    network_mode: host
+    ipc: host
+
+
+    environment:
+      DISPLAY: ${DISPLAY}
+      QT_X11_NO_MITSHM: "1"
+
+      ROS_DOMAIN_ID: 0
+
+
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./ros2_ws:/root/ros2_ws
+      - /etc/localtime:/etc/localtime:ro
+
+
+    privileged: true
+
+    stdin_open: true
+    tty: true
+
+    command: bash
