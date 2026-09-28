@@ -1,6 +1,6 @@
 ## ROS 2 Humble + Gazebo Fortress Docker 环境
 
-本项目使用 Docker 构建一个 ROS 2 Humble + Gazebo Fortress 的开发环境，宿主机无需直接安装 ROS 2 和 Gazebo。
+本项目使用 Docker 构建一个 ROS 2 Humble + Gazebo Fortress 的开发环境。
 
 ### 首次启动
 
