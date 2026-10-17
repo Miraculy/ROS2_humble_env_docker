@@ -65,7 +65,8 @@ RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
 # 创建 ROS 2 工作空间
 # ============================================================
 
-RUN mkdir -p /root/ros2_ws/src
+RUN mkdir -p /root/ros2_ws
+RUN cd /root/ros2_ws && git clone https://github.com/ros2/examples src/examples -b humble
 
 WORKDIR /root/ros2_ws
 
